@@ -44,19 +44,17 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             className="rounded-full"
           ></Image>
         </Link>
-      </div>
-      <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc">{description}</p>
 
-        <img src={image} alt="placeholder" className="startup-card_img" />
-      </Link>
-      <div className="flex-between gap-3 mt-5">
-        <Link href={`/?query=${category.toLowerCase()}`}>
-          <p className="text-16-medium">{category}</p>
-        </Link>
-        <button className="startup-card_btn" asChild>
-          <Link href={`/startup/${_id}`}>Details</Link>
-        </button>
+        
+
+        {/* <div className="flex-between gap-3 mt-5">
+          <Link href={`/?query=${category.toLowerCase()}`}>
+            <p className="text-16-medium">{category}</p>
+          </Link>
+          <button className="startup-card_btn" asChild>
+            <Link href={`/startup/${_id}`}>Details</Link>
+          </button>
+        </div> */}
       </div>
     </li>
   );
