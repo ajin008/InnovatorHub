@@ -15,8 +15,8 @@ export const STARTUPS_QUERY =
     image
 }`);
 
-export const STARTUP_BY_ID_QUERY =
-  defineQuery(`*[_type == 'startup' && _id == $id][0]{
+export const STARTUP_BY_ID_QUERY = 
+*[_type == 'startup' && _id == $id][0]{
   _id,
   title,
   slug, 
@@ -29,4 +29,4 @@ export const STARTUP_BY_ID_QUERY =
   category,
   image,
   pitch,
-}`);
+}
