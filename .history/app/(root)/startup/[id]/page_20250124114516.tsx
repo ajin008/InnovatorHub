@@ -7,7 +7,6 @@ import { formatDate } from "@/lib/utils";
 import Image from "next/image";
 
 export const experimental_ppr = true;
-import defaultAvatar from "../../../../public/default-avatar.jpg";
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
@@ -16,7 +15,6 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   if (!post) return notFound();
   // console.log(`${post.author.image}`);
-  console.log("data in post", post);
   return (
     <>
       <section className="pink_container !min-h-[230px]">
@@ -27,7 +25,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
       <section className="section_container">
         <img
-          src={post.image}
+          src={post.author.image}
           alt="thumbnail"
           className="w-full h-auto rounded-xl"
         />
@@ -45,17 +43,8 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 height={64}
                 className="rounded-full drop-shadow-lg"
               />
-              <div>
-                <p className="text-20-medium">{post.author.name}</p>
-                <p className="text-16-medium !text-black-300">
-                  @{post.author.username}
-                </p>
-              </div>
             </Link>
-
-            <p className="category-tag">{post.category}</p>
           </div>
-          <h1 className="text-30-bold">Pitch Details</h1>
         </div>
       </section>
     </>

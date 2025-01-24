@@ -24,7 +24,7 @@ export const author = defineType({
       type: "string",
     }),
     defineField({
-      name: "image",
+      name: "imgage",
       type: "url",
     }),
     defineField({
